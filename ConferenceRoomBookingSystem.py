@@ -76,7 +76,6 @@ def show_day():
 
     start_over_button = tk.CTkButton(master=book_frame, text="OK", command=go_back_to_main_menu)
     start_over_button.pack(pady=20)
-
     
 def show_week():
     global main_frame  # Add this line to access the global main_frame variable
@@ -89,8 +88,7 @@ def show_week():
 
     book_frame = tk.CTkScrollableFrame(master=root, width=200, height=200)
     book_frame.pack(pady=20, padx=20, fill="both", expand=True)
-
-    
+   
     # Container for start date and end date
     date_container = tk.CTkFrame(master=book_frame)
     date_container.pack(side="top", pady=10, anchor="center")
@@ -174,7 +172,6 @@ def get_weekday_dates(start_date, end_date):
     while current_date <= friday:
         dates.append(current_date.strftime("%m/%d/%y"))
         current_date += timedelta(days=1)
-
     return dates
 
 def book_time():
@@ -286,9 +283,5 @@ def book_time():
     start_over_button = tk.CTkButton(master=book_frame, text="OK", command=create_main_menu)  # Go back to main menu
     start_over_button.pack(pady=20)
 
-
-
-
 create_main_menu()
-
 root.mainloop()
